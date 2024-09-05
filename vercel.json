@@ -2,14 +2,21 @@
     "version": 2,
     "builds": [
       {
-        "src": "./index.js",
+        "src": "index.js",
         "use": "@vercel/node"
       }
     ],
     "routes": [
       {
         "src": "/(.*)",
-        "dest": "/"
+        "dest": "/index.js"
       }
-    ]
+    ],
+    "env": {
+      "PORT": "4000",
+      "DATABASE_URL": "@database_url",
+      "CLOUDINARY_URL": "@cloudinary_url",
+      "ANOTHER_ENV_VARIABLE": "@another_env_variable"
+    }
   }
+  
